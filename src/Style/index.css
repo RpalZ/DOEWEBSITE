@@ -1,0 +1,146 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+   
+}
+
+body {
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    min-width: 863px;
+    justify-content: center;
+}
+#main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    min-width: 870px;
+
+}
+
+nav {
+    width: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+#logo {
+    height: 3em;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: yellow;
+}
+
+.util{
+    /* min-width: max-content; */
+    background-color: green;
+    margin: 20px;
+    justify-content: center;
+    
+
+}
+
+.navButt{
+    display: inline;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 5px;
+    background-color: blue;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+
+}
+
+.navButt:hover{
+    color: black;
+}
+
+section {
+    display: grid;
+    width: 100%;
+    outline: black 3px solid;
+}
+
+a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+.sect1 {
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(8, 100px);
+    grid-template-columns: repeat(16, 1fr);
+    
+}
+
+#intro{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    border-radius: 20px;
+    padding: 20px;
+    grid-row: 3 / span 3;
+    grid-column: 6 / span 6;
+}
+
+.imgs {
+    background-color: yellow;
+    outline: black solid 4px;
+    border-radius: 10px;
+    grid-row: 3/ span 3;
+}
+
+#img1 {
+    grid-column: 2/ span 3;
+}
+
+#img2 {
+    grid-column: 13 / span 3;
+}
+
+.sect2 {
+    display: grid;
+    width: 100%;
+    grid-template-rows: repeat(8, 100px);
+    grid-template-columns: repeat(34, 1fr);
+
+}
+
+.list-of-activities {
+    min-width: 580px;
+    max-width: 580px;
+    padding: 20px;
+    display: flex;
+    background-color: red;
+    grid-row:  3 / span 4;
+    grid-column: 13 / span 10;
+
+}
+
+.activities {
+    width: 100%;
+    background-color: aquamarine;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.activities>li {
+   display: inline-block;
+}
+
+.activity-blocks {
+    width: 500px;
+    margin: 0px 40px 0px 0px;
+    height: 300px;
+    color: white;
+    background-color: rebeccapurple;
+}
