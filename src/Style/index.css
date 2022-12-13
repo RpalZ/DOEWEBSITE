@@ -90,6 +90,13 @@ a {
     padding: 20px;
     grid-row: 3 / span 3;
     grid-column: 6 / span 6;
+    /* min-width: 400px; */
+}
+
+#intro > p {
+    width: 100%;
+   
+    font-size: 125%;
 }
 
 .imgs {
@@ -138,9 +145,23 @@ a {
 }
 
 .activity-blocks {
+    display: grid;
     width: 500px;
     margin: 0px 40px 0px 0px;
     height: 300px;
     color: white;
     background-color: rebeccapurple;
+    grid-template-rows: 200px 100px;
 }
+
+.activity-blocks > h1 {
+    display: flex;
+    font-size: 50px;
+    align-items: center;
+    margin: 0px;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+
