@@ -1,26 +1,44 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
-   
+    box-sizing: border-box;
 }
 
+
+body::-webkit-scrollbar {
+ width: 1em;
+    
+}
+
+body::-webkit-scrollbar-track {
+ margin-block: -3vh;
+ background-color: #1D1D1D;
+}
+
+body::-webkit-scrollbar-thumb {
+ background-color: white;
+ margin: 0;
+}
+
+
+
 body {
-    margin: 0%;
-    padding: 0%;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    min-width: 863px;
+    /* min-width: 863px; */
     justify-content: center;
 }
 #main {
     width: 100%;
     display: flex;
     justify-content: center;
-    min-width: 870px;
+    /* min-width: 870px; */
 
 }
 
 nav {
     width: 100%;
-    background-color: red;
+    background-color: #111111;
     display: flex;
     justify-content: space-between;
     align-content: center;
@@ -28,75 +46,135 @@ nav {
 }
 
 #logo {
-    height: 3em;
-    width: 200px;
+    height: 6em;
+    width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: yellow;
+    background-color: #111111;
 }
 
-.util{
-    /* min-width: max-content; */
-    background-color: green;
-    margin: 20px;
-    justify-content: center;
-    
-
+#logo > img {
+    width: 30%;
+    padding: 10px 15px 10px 0px;
 }
 
-.navButt{
-    display: inline;
-    font-size: large;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 5px;
-    background-color: blue;
-    padding: 10px;
+#name > h2 {
+    font-size: 30px;
     color: white;
-    border-radius: 10px;
 
 }
 
-.navButt:hover{
+.dropdown {
+    overflow: hidden;
+}
+  
+  .dropbtn {
+    font-size: 45px;  
+    border: none;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    outline: none;
+    color: white;
+    padding: 35px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
+
+.dropbtn:hover {
     color: black;
 }
+
+  .dropdown:hover .util{
+      display: block;
+  }
+
+
+.util{
+    /* display:flex; */
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 85px;
+    left: 0;
+    padding: 0;
+    background-color: #111111;
+
+}
+
+
+
+.navButt{
+ display: flex;
+ justify-content: center;
+ width: 100%;
+ margin: 0;
+
+}
+
+.navButt > a:hover{
+    color: black;
+}
+
+
+.navButt > a {
+    padding: 20px;
+    color: white;
+    font-size: 30px;
+    text-decoration: inherit;
+    text-align: center;
+    /* color: inherit; */
+    width: 100%;
+}
+
+
 
 section {
     display: grid;
     width: 100%;
-    outline: black 3px solid;
+    outline: black 3px solid; 
+    background-color: #222222
 }
 
-a {
-    text-decoration: inherit;
-    color: inherit;
-}
 
 .sect1 {
     width: 100%;
     display: grid;
     grid-template-rows: repeat(8, 100px);
-    grid-template-columns: repeat(16, 1fr);
+    grid-template-columns: repeat(17, 1fr);
     
 }
 
-#intro{
-    background-color: red;
+.sect1 > h1 {
+    font-size: 4rem;
     display: flex;
+    justify-content: center;
+    text-align: center;
+    grid-column: 9;
+    color: white;
+}
+
+#intro{
+
+    display: flex;
+    opacity: 0.5;
+    /* outline: solid 3px #2B2B2B; */
     align-items: center;
     justify-items: center;
-    border-radius: 20px;
+    border-radius: 10px;
     padding: 20px;
-    grid-row: 3 / span 3;
-    grid-column: 6 / span 6;
+    grid-row: 5 / span 3;
+    grid-column: 6 / span 7;
     /* min-width: 400px; */
 }
 
 #intro > p {
     width: 100%;
-   
-    font-size: 125%;
+    text-align: center;
+    color: white;
+    font-size: 1.3rem;
 }
 
 .imgs {
@@ -106,13 +184,7 @@ a {
     grid-row: 3/ span 3;
 }
 
-#img1 {
-    grid-column: 2/ span 3;
-}
 
-#img2 {
-    grid-column: 13 / span 3;
-}
 
 .sect2 {
     display: grid;
@@ -123,45 +195,109 @@ a {
 }
 
 .list-of-activities {
-    min-width: 580px;
-    max-width: 580px;
-    padding: 20px;
-    display: flex;
-    background-color: red;
+    
+    min-width: 300px;
+    /* max-width: 580px; */
+    /* width: 70%; */
+    /* padding: 20px; */
+    position: relative;
+    /* padding: 0 1rem 1rem; */
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    grid-auto-columns: 100%;
+    gap: .3rem;
+    display: grid;
+    /* padding-right: 5%; */
+    grid-auto-flow: column;
+    background-color: #222222;
     grid-row:  3 / span 4;
-    grid-column: 13 / span 10;
+    grid-column: 10 / span 17;
 
 }
 
-.activities {
+.list-of-activities::-webkit-scrollbar {
+    height: 1em;
+    width: 1em;
+}
+
+.list-of-activities::-webkit-scrollbar-track {
+    background-color: #222222;
+}
+.list-of-activities::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 20px;
+}
+
+
+.snaps-inline{
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 5%;
+}
+
+.snaps-inline > * {
+    scroll-snap-align: start;
+}
+
+/* .activities {
+    display: grid;
+    grid-template-columns:repeat(5, min-content);
     width: 100%;
-    background-color: aquamarine;
-    overflow: auto;
-    white-space: nowrap;
-}
+    column-gap: 20px;
+    /* display: flex; */
+    /* justify-content: space-around; */
+    /* margin: 0; */
+    /* padding-left: 20px; */
+    /* align-items: center; */
+    /* background-color: aquamarine; */
+    /* overflow: auto; */
+    /* white-space: nowrap; */
 
-.activities>li {
+
+/* .activities>li {
    display: inline-block;
-}
+   width: 100%;
+} */ 
 
 .activity-blocks {
     display: grid;
-    width: 500px;
-    margin: 0px 40px 0px 0px;
-    height: 300px;
+    /* min-width: 260px; */
+    /* width: clamp(260px, 0.5vw, 700px); */
+    width: auto;
+    /* width: min(100%, 400px); */
+    /* margin: 20px; */
+    /* height: 325px; */
+    box-shadow: 5px 5px 6px #111111;
     color: white;
-    background-color: rebeccapurple;
-    grid-template-rows: 200px 100px;
+    margin: 5%;
+    /* border: solid white 2px; */
+    padding: 10%;
+    gap: 5px;
+    background-color: #111111;
+    border-radius: 10px;
+    grid-template-rows: 1fr 1fr;
 }
 
 .activity-blocks > h1 {
     display: flex;
-    font-size: 50px;
+    font-size: 2.3rem;
     align-items: center;
     margin: 0px;
     text-align: center;
     justify-content: center;
     padding: 10px;
+}
+.activity-blocks > button {
+    /* display: none; */
+    /* width: 100%; */
+    /* height: 90%; */
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border: #1D1D1D 3px solid;
+    background-color: lightgreen;
+    margin: 10px;
+    border-radius: 20px;
 }
 
 
