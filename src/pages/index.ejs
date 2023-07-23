@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- <title>Raya's Amazing website</title> -->
+    <title>CoolWebsiteDOE</title>
+    <link rel="stylesheet" href=<%= locals.styleSource || 'Style/index.css' %> type="text/css">
+    <script src="https://kit.fontawesome.com/7664d663b2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main id="main">
+        <nav class="nav">
+            <div id="logo">
+                <img src=<%= locals.img1Source || '/Images/1200px-TK_sandbox_icon.svg.png'  %> alt="sandbox">
+                 <h2 id="name">Sandbox</h2>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <ul class="util">
+                    <li class="navButt"><a href="#">Home</a></li>
+                    <li class="navButt"><a href="#">Snake Game</a> </li>
+                    <li class="navButt"><a href="#">Calendar</a></li>
+                    <li class="navButt"><a href="#">Shopping</a></li>
+                    <li class="navButt"><a href="#">To-do List</a></li>
+                </ul>
+            </div>
+            <button class="login-button <%=locals.login %>" onclick="location.href='home/login'">Login</button>
+        </nav>
+    </main>
+   <div class="sectwrapper">
+       <section class="sect1">
+           <h1 class="<%= locals.login %>">Welcome To My Website <%= locals.user  %></h1>
+           <div id="intro"><p>This website
+               mainly demonstrates the skills I have learned over the past months in web development
+               for the Duke of Edinburgh. A list of activities has been
+               displayed for you on the navbar and the next page. Click on them to explore
+                their functions. Have fun.</p></div>
+       </section>
+       <section class="sect2">
+           <div class="cover">
+               <h1 id="sect2-h1">Explore the list of activities!</h1>
+               <div class="list-of-activities snaps-inline">
+       
+                           <div class="activity-blocks" id="activity_block1">
+                               <h1>Snake Game</h1>
+                               <button><i class="fa-solid fa-play"></i></button>
+                           </div>
+       
+       
+                           <div class="activity-blocks" id="activity_block2">
+                               <h1>Calendar</h1>
+                               <button><i class="fa-solid fa-play"></i></button>
+                           </div>
+       
+       
+                           <div class="activity-blocks" id="activity_block3">
+                               <h1>Shopping</h1>
+                               <button><i class="fa-solid fa-play"></i></button>
+                           </div>
+       
+       
+                           <div class="activity-blocks" id="activity_block4">
+                               <h1>To-do List</h1>
+                               <button><i class="fa-solid fa-play"></i></button>
+                           </div>
+       
+       
+       
+               </div>
+           </div>
+       </section>
+   </div>
+    <footer>
+        <form action="/" method="get" class="contact-me">
+            <h1>Contact Me</h1>
+            <div>
+                <label for="fname">Name:</label>
+                <input type="text" id="fname" name="fname" placeholder="">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="guest@gmail.com">
+            </div>
+            <div id="formButton">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+        <p class="formDesc">If you have any feedbacks, use this form to contact me</p>
+        <div class="credits">
+            <div id="me" class="cred-block">Made by: Raya</div>
+            <div id="mentions" class="cred-block">Special Thanks to: DOE</div>
+            <div id="socials" class="cred-block">Insta: @something</div>
+        </div>
+    </footer>
+
+    
+</body>
+</html>

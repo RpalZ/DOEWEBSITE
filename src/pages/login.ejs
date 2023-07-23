@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Style/loginStyle.css" type="text/css">
+    <title>LoginPage</title>
+</head>
+<body>
+    <form action="login/auth" method="post">
+        <h1>Login</h1>
+        <div>
+         <label for="femail">Email:</label>
+         <input type="email" name="femail" id="femail" placeholder="example@gmail.com" value="<%= locals.emailInput%>">
+        </div>
+        <div>
+            <label for="fpassword">Password:</label>
+            <input type="password" name="fpassword" id="fpassword">
+        </div>
+        <button type="Submit">Submit</button>
+    </form>
+</body>
+</html>
