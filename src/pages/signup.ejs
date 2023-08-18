@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Style/signupStyle.css" type="text/css">
+    <title>LoginPage</title>
+    <script type="text/javascript" src="../scripts/signup.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+</head>
+<body>
+    <form action="/home/signup" method="post" onsubmit="return validate(this, event)">
+        <h1>Sign-Up</h1>
+        <div>
+            <label for="fusername">Username:</label>
+            <input type="text" name="fusername" id="fusername" placeholder="John">
+        </div>
+        <div>
+         <label for="femail">Email:</label>
+         <input type="email" name="femail" id="femail" placeholder="example@gmail.com" value="<%= locals.inputEmail%>">
+        </div>
+        <div>
+            <label for="fpassword">Password:</label>
+            <input type="password" name="fpassword" id="fpassword" onChange="onChange()">
+        </div>
+        <div>
+            <label for="fconfirm">Confirm</label>
+            <input type="password" id="fconfirm" name="fconfirm" onChange="onChange()">
+        </div>
+        <button type="Submit">Submit</button>
+    </form>
+</body>
+</html>
