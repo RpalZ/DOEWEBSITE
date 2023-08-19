@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raya's Shop</title>
+    <script src="scripts/shop.js"></script>
+    <link rel="stylesheet" href="Style/shop.css">
+    <script src="https://kit.fontawesome.com/7664d663b2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <main class="main">
+        <!-- here we will have nav bar, product lists, query bar -->
+        <!-- <h1>hi</h1> -->
+        <div class="nav">
+            <div class="logo"><img src="/Images/1200px-TK_sandbox_icon.svg.png" alt=""><h1>Sandbox</h1></div>
+            <div class="user">
+                Guest
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <ul class="util">
+                    <li class="navButt"><a href="/home">Home</a></li>
+                    <li class="navButt"><a href="/snake">Snake Game</a> </li>
+                    <li class="navButt"><a href="/calendar">Calendar</a></li>
+                    <li class="navButt"><a href="/shop">Shopping</a></li>
+                    <li class="navButt"><a href="/todo">To-do List</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="query-bar">
+            <i class="fa-solid fa-magnifying-glass" style="color: white;"></i>
+            <input id='query-search' type="search" name="query-search" placeholder="Search">
+            <div class="product-dropdown">
+                <button class="dropbtn-prod">
+                    <i class="fa-solid fa-bars" ></i>
+                </button>
+                <ul class="product-utils">
+                    <li class="category"></li>
+                    <li class="category"></li>
+                    <li class="category"></li>
+                    <li class="category"></li>
+                    <li class="category"></li>
+                </ul>
+            </div>
+        </div>
+    <section class="site">
+        <h1>Products</h1>
+        <div class="products">
+            <ul class="product-list">
+                <li class="product">
+                    <div class="product-card 1">im a product</div>
+                </li>
+                <li class="product">
+                    <div class="product-card 2"></div>
+                </li>
+                <li class="product">
+                    <div class="product-card 3"></div>
+                </li>
+                <li class="product">
+                    <div class="product-card 4"></div>
+                </li>
+            </ul>
+        </div>
+
+    </section>
+    <footer class="footer">
+
+        
+    </footer>
+
+
+
+
+    </main>
+</body>
+</html>

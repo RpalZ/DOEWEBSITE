@@ -7,7 +7,7 @@ const initMongoDB = require('../../database/data')
 
 router.route('/')
     .get((req, res) => {
-        res.send('coming soon')
+        res.render(`${__dirname}/../../pages/shop.ejs`)
 
 
 
