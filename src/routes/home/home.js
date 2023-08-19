@@ -11,30 +11,11 @@ router.get('/', async (req, res) => {
 
 
         const cookieObj = initCookieObj(req.headers.cookie)
-
         console.log(req.cookies)
-        if (!cookieObj) return res.render(`${__dirname}/../../pages/index`)
-        const { db, collection, client, obj } = new initMongoDB();
-        const { session_id } = cookieObj
-        if (!session_id) return res.render(`${__dirname}/../../pages/index`)
-        const result = await collection.findOne({
-            sessions: { $in: [session_id] }
-        })
-        console.log(result)
-        if (result) {
-            res.redirect(`/home/user/${result.user}`)
-        } else {
-            res.render(`${__dirname}/../../pages/index`)
-        }
-
-
-        // await client.close()
-
-        console.table({
-            sessionID: req.sessionID, cookie: req.headers.cookie, contains: new RegExp(req.sessionID).test(req.headers.cookie),
-
-        })
-        console.log(initCookieObj(req.headers.cookie))
+        if (!req.session) return res.render(`${__dirname}/../../pages/index`)
+        if (!req.session.user) return res.render(`${__dirname}/../../pages/index`)
+        const user = req.session.user
+        res.redirect(`/home/user/${user.user}`)
     } catch (e) {
         console.log(e)
     }

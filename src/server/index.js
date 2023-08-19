@@ -8,7 +8,16 @@ module.exports = () => {
     const bodyParser = require('body-parser');
     const session = require('express-session')
     const cookieParser = require('cookie-parser')
-    const memoryStore = new session.MemoryStore()
+    const MongoStore = require('connect-mongo')
+    const { mongoKeyBackUp } = require('../json/config.json')
+
+
+    const store = MongoStore.create(
+        {
+            mongoUrl: mongoKeyBackUp,
+            dbName: 'sessions'
+        }
+    )
 
     app.set('view engine', 'ejs')
     // app.set('trust proxy', 1)
@@ -22,7 +31,7 @@ module.exports = () => {
     const sess = {
         name: 'session_id',
         secret: "cool secret",
-
+        store,
         cookie: {
             maxAge: 1.8e+7,
             sameSite: 'none'

@@ -51,7 +51,7 @@ const accSnakeGame = {
     highscore: 0,
 }
 
-const accEcommerce = {
+const accShop = {
     user: '',
     itemsInCart: [],
     itemsPurchased: []
@@ -78,9 +78,9 @@ class initMongoDB {
                 collectionName = "snakeAccs"
             }
                 break;
-            case 'ecommerce': {
-                delObj = accEcommerce
-                collectionName = "ecomAccs"
+            case 'shop': {
+                delObj = accShop
+                collectionName = "shopAccs"
             }
                 break;
             case 'todo': {

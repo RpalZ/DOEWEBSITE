@@ -34,27 +34,9 @@ router.route(`/`)
             if (!accResult) return res.send({ status: 404 })
 
             req.session.logged = true
+            const { password, sessions, ...publicUser } = accResult
+            req.session.user = publicUser
 
-
-            if (!accResult.sessions) {
-                const update = await collection.findOneAndUpdate({
-                    email
-                }, {
-                    $set: { sessions: [req.sessionID] }
-                })
-            } else {
-                const update = await collection.findOneAndUpdate({
-                    email
-                }, {
-                    $push: { sessions: req.sessionID }
-                })
-            }
-            setTimeout(async () => {
-                const result = await collection.findOne({ sessions: { $in: [req.sessionID] } })
-                if (result) {
-                    await collection.findOneAndUpdate({ email }, { $pull: { sessions: req.sessionID } })
-                }
-            }, 1.8e+7)
             res.send({
                 status: 200,
                 user: accResult?.user,

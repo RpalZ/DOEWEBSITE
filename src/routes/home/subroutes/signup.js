@@ -21,6 +21,11 @@ router.route('/')
 
             const OBJ = { ...obj, email, password, user: username }
             await collection.insertOne(OBJ)
+            req.session.logged = true
+            const { ...userObj } = OBJ
+            delete userObj.password
+            req.session.user = userObj
+
 
             // await client.close()
             return res.send({ status: 200, user: username })

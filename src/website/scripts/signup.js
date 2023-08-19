@@ -42,7 +42,7 @@ async function validate(form, event) {
     try {
         console.log('sent')
         const res = await axios.post('/home/signup',
-            { username, email, password })
+            { username, email, password }, { withCredentials: true })
         const { data } = res
 
         if (isEmpty(data)) return alert('Something went wrong. Try again')
