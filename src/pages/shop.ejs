@@ -6,9 +6,11 @@
     <title>Raya's Shop</title>
     <script src="scripts/shop.js"></script>
     <link rel="stylesheet" href="Style/shop.css">
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <script src="https://kit.fontawesome.com/7664d663b2.js" crossorigin="anonymous"></script>
+    <script src="scripts/shop.js"></script>
 </head>
-<body>
+<body >
     <main class="main">
         <!-- here we will have nav bar, product lists, query bar -->
         <!-- <h1>hi</h1> -->
@@ -50,8 +52,10 @@
         <h1>Products</h1>
         <div class="products">
             <ul class="product-list">
-                <li class="product">
-                    <div class="product-card 1">im a product</div>
+                <!-- <li class="product">
+                    <div class="product-card 1">
+                        
+                    </div>
                 </li>
                 <li class="product">
                     <div class="product-card 2"></div>
@@ -61,10 +65,23 @@
                 </li>
                 <li class="product">
                     <div class="product-card 4"></div>
-                </li>
+                </li> -->
             </ul>
         </div>
+        <div class="pagination">
+            <button class="prevBtn" onclick="prevBtn()">
+                <i class="fa-solid fa-arrow-left"></i>
+                prev
+            </button>
+            <ul>
+               
+            </ul>
 
+            <button class="nextBtn" onclick="nextBtn()">
+                next
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
     </section>
     <footer class="footer">
 
