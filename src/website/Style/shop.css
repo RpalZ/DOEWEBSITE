@@ -36,6 +36,26 @@ body::-webkit-scrollbar {
     background-color: white;
     margin: 0;
    }
+
+   .products::-webkit-scrollbar {
+    width: 1em;
+    border-radius: 10px;
+       
+   }
+   
+   .products::-webkit-scrollbar-track {
+    margin-block: -4.4vh;
+    border-radius: 10px;
+    background-color: #1D1D1D;
+   }
+   
+   .products::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+    margin: 0;
+   }
+   
+   
    
    
 .main {
@@ -46,6 +66,7 @@ body::-webkit-scrollbar {
 
 .nav {
     width: 100%;
+    padding: 10px;
     /* height: 10vh; */
     /* position: absolute; */
     display: flex;
@@ -61,18 +82,20 @@ body::-webkit-scrollbar {
     justify-content: start;
     padding-left: 10px;
     align-items: center;
-    width: 200px;
+    /* width: 200px; */
     /* height: 50px; */
 }
 
+
+
 .logo > h1 {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: white;
 }
 
 .logo > img {
-    width: 37px;
-    margin: 10px;
+    width: 50px;
+    margin: 15px;
 }
 
 
@@ -113,7 +136,7 @@ body::-webkit-scrollbar {
     display: none;
     position: absolute;
     width: 100%;
-    top: 42px;
+    top: 60px;
     left: 0;
     padding: 0;
     background-color: var(--color2);
@@ -155,16 +178,38 @@ body::-webkit-scrollbar {
     width: 100%;
     background-color: var(--color2);
     /* outline: purple 2px solid; */
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 
+.query-bar > form {
+    width: clamp(200px, 70%, 700px);
+    padding: 0;
+    margin: 10px;
+
+
+}
+
+.query-bar > i {
+    font-size: 1.6rem;
+}
+
+.dropbtn-prod > i{
+    font-size: 1.6rem;
+}
+
+
 
 #query-search {
-    margin: 10px;
-    width: 80%;
+    /* margin: 10px; */
+    padding-inline: 20px;
+    border: none;
+    border-radius: 30px;
+    width: clamp(200px, 100%, 700px);
+    height: 45px;
 }
 
 .site {
@@ -175,6 +220,37 @@ body::-webkit-scrollbar {
     align-items: center;
     /* justify-content: center; */
 }
+
+.banner {
+    width: 100%;
+    height: 300px;
+    color: white;
+    display: flex;
+    align-items: center;
+    background: url('../Images/circle-scatter-haikei.svg');
+    background-size: cover;
+    margin-bottom: 0;
+    justify-content: center;
+    text-align: center;
+    /* outline: blue 2px solid; */
+}
+
+.banner > div {
+    width: 100%;
+    height: 100%;
+    
+    background: black;
+    opacity: 0.7;
+}
+
+.banner >  h1 {
+    font-size: 2rem;
+    z-index: 21;
+    position: absolute;
+    
+}
+
+
 
 .dropbtn-prod {
     color: white;
@@ -193,10 +269,55 @@ body::-webkit-scrollbar {
 
 .product-utils {
     display: none;
+    position: absolute;
+    /* display: grid; */
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 15px;
+    width: 100%;
+    top: 468px;
+    background-color: var(--color2);
+    left: 0;
+    /* outline: red 2px solid; */
+    padding: 10px 40px;
+    z-index: 22;
+
+    /* text-decoration: none; */
+    /* display: inline; */
+}
+.category {
+    text-decoration: none;
+    padding: 10px;
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    /* outline: red 2px solid; */
+    color: white;
+    opacity: 0.8;
+    display: flex;
+    grid-row: auto;
+    align-items: center;
+    justify-content: start;
 }
 
-.fa-solid {
-    /* margin-left: 10px; */
+.category.active {
+    /* opacity: 0.2; */
+    /* color: white; */
+    opacity: 1;
+    /* outline: red 2px solid; */
+    background-color: var(--color3);
+    border-radius: 20px;
+}
+
+.category:hover {
+    opacity: 1;
+}
+
+.product-utils.active {
+    display: grid;
+}
+
+.dropbtn-prod.active {
+    color: black;
 }
 
 .product-dropdown:hover .dropbtn-prod {
@@ -211,7 +332,7 @@ body::-webkit-scrollbar {
 .products {
     outline: 2px var(--color2) solid;
     width: 90%;
-    height: 550px;
+    height: 600px;
     display: flex;
     overflow-y: scroll;
     flex-wrap: wrap;
@@ -222,6 +343,7 @@ body::-webkit-scrollbar {
 
 .product {
     /* outline: 2px wheat solid; */
+    grid-row: auto;
     text-decoration: none;
     margin: 0;
     padding: 0;
@@ -232,13 +354,15 @@ body::-webkit-scrollbar {
 
 .product-card {
     /* outline: green 2px solid; */
-    width: 100%;
+    /* width: 100%; */
+    /* max-width: 400px; */
+    height: 100%;
     display: flex;
     padding: 15px;
     flex-direction: column;
     text-align: center;
     /* height: 350px; */
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     background: var(--color3);
     /* opacity: 0.7; */
@@ -247,21 +371,24 @@ body::-webkit-scrollbar {
     /* height: 300px; */
 }
 
-.product-card > img {
+.prod-img {
     /* width: 200px; */
     border-radius: 10px;
     width: 100%;
-    object-fit: cover;
+    height: 275px;
+    background-position: center;
+    background-size:cover;
+    /* object-fit:fill; */
 }
 
 .product-card > h1 {
     width: 100%;
     margin-bottom: 0;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
 }
 
 .product-card > p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: whitesmoke;
     opacity: 0.6;
 }
@@ -275,7 +402,7 @@ body::-webkit-scrollbar {
     border: none;
     color: white;
     opacity: 0.8;
-    font-size: 2rem;
+    font-size: 1.6rem;
     background: black;
     border-radius: 10px;
     width: 100%;
@@ -289,6 +416,10 @@ body::-webkit-scrollbar {
 
 .product-list{
     width: 100%;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* grid-auto-rows: min-content; */
     /* outline: yellow 2px solid; */
     margin: 10px;
     padding: 0;
@@ -296,6 +427,8 @@ body::-webkit-scrollbar {
 
 .pagination { 
     display: flex;
+    margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 .pagination > ul {
@@ -320,6 +453,14 @@ body::-webkit-scrollbar {
     /* margin: 0; */
 }
 
+.footer {
+    background: var(--color2);
+    height: 40vh;
+    width: 100%;
+}
+
+
+
 .pagination > button {
     text-decoration: none;
     color: white;
@@ -343,4 +484,19 @@ body::-webkit-scrollbar {
 
 ul li.active {
     background: var(--color4);
+}
+
+
+
+
+/* Media Queries */
+
+/* Ipad Screen */
+
+@media (width > 800px ) {
+
+    .product-list {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
 }

@@ -6,9 +6,9 @@
     <title>Raya's Shop</title>
     <script src="scripts/shop.js"></script>
     <link rel="stylesheet" href="Style/shop.css">
-    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
-    <script src="https://kit.fontawesome.com/7664d663b2.js" crossorigin="anonymous"></script>
-    <script src="scripts/shop.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js" ></script>
+    <script src="https://kit.fontawesome.com/7664d663b2.js"  crossorigin="anonymous"></script>
+    <script src="scripts/shop.js" defer></script>
 </head>
 <body >
     <main class="main">
@@ -32,23 +32,35 @@
                 </ul>
             </div>
         </div>
-        <div class="query-bar">
-            <i class="fa-solid fa-magnifying-glass" style="color: white;"></i>
-            <input id='query-search' type="search" name="query-search" placeholder="Search">
-            <div class="product-dropdown">
-                <button class="dropbtn-prod">
-                    <i class="fa-solid fa-bars" ></i>
-                </button>
-                <ul class="product-utils">
-                    <li class="category"></li>
-                    <li class="category"></li>
-                    <li class="category"></li>
-                    <li class="category"></li>
-                    <li class="category"></li>
-                </ul>
-            </div>
-        </div>
+       
     <section class="site">
+        <div class="banner">
+            <div>
+            </div>
+                <h1>
+                    Explore your ideal marketplace.
+                </h1>
+            </div>
+            <div class="query-bar">
+                <i class="fa-solid fa-magnifying-glass" style="color: white;"></i>
+                <form onsubmit="searched(this, event)">
+                    <input id='query-search' type="search" name="q" placeholder="Search">
+                </form>
+                <div class="product-dropdown">
+                    <button class="dropbtn-prod" onclick="dropBtnProdClicked(this)">
+                        <i class="fa-solid fa-bars" ></i>
+                    </button>
+                    <ul class="product-utils">
+                        <!-- <li class="category" value="">smartphones</li>
+                        <li class="category" value="">smartphones</li>
+                        <li class="category" value="">bags</li>
+                        <li class="category" value="">bags</li> -->
+                        <template>
+                            <li class="category"></li>
+                        </template>
+                    </ul>
+                </div>
+            </div>
         <h1>Products</h1>
         <div class="products">
             <ul class="product-list">
