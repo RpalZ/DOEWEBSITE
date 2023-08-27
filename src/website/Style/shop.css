@@ -486,8 +486,43 @@ ul li.active {
     background: var(--color4);
 }
 
+.user-card:hover {
+    color: #000000;
+}
 
+.user-list {
+    /* display: flex; */
+    display: none;
+    position: absolute;
+    z-index: 30;
+    padding: 10px;
+    right: 86px;
+    border-radius: 15px;
+    background: var(--color3);
+    /* margin-right: 500px; */
+    flex-direction: column;
+    /* outline: white 1px solid */
+}
 
+.user-list.active {
+    display: flex;
+}
+
+.user-util {
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    display: block;
+}
+
+.user-util > a {
+    text-decoration: none;
+    color: white;
+}
+
+.user-util > a:hover {
+    opacity: 0.7;
+}
 
 /* Media Queries */
 

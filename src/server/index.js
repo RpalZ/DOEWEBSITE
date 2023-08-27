@@ -34,12 +34,12 @@ module.exports = () => {
         store,
         cookie: {
             maxAge: 1.8e+7,
-            sameSite: 'none'
+            sameSite: 'lax'
         },
         saveUninitialized: false,
     }
 
-    sess.cookie.sameSite = true
+    // sess.cookie.secure = true
 
 
     app.use(express.urlencoded({ extended: true }))

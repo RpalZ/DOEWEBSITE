@@ -47,6 +47,11 @@ async function renderCategories() {
     })
 }
 
+function userCardClicked(el) {
+    const userUtils = el.nextElementSibling
+    userUtils.classList.toggle('active')
+}
+
 function dropBtnProdClicked(element) {
     const prodUtils = element.nextElementSibling
     prodUtils.classList.toggle('active')
