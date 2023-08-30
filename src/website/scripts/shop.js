@@ -264,7 +264,8 @@ function createProductCards(productObj, id) {
     //returns  li element which contains the product card
     const liProd = document.createElement('li')
     const prodCard = document.createElement('div')
-    const image = document.createElement('div')
+    const imageContainer = document.createElement('div')
+    const image = document.createElement('img')
     const title = document.createElement('h1')
     const desc = document.createElement('p')
     const price = document.createElement('h2')
@@ -276,18 +277,22 @@ function createProductCards(productObj, id) {
     desc.innerText = productObj.description.length > 60 ? productObj.description.trim().slice(0, 60) + '...' : productObj.description.trim()
     // price.innerText = 
     buyBtn.innerText = "$" + productObj.price;
+    buyBtn.setAttribute('onclick', `window.location.href = "/shop/item/${productObj.id}"`)
 
     // buyBtn.append(cart)
 
     prodCard.setAttribute('value', id)
     // console.log(prodCard)
+    imageContainer.classList.add('img-container')
     image.classList.add('prod-img')
-    image.style.background = `url('${productObj.images[0]}')`
+    image.src = productObj.thumbnail
+    // image.style.background = `url('${productObj.thumbnail}')`
     liProd.setAttribute('class', 'product')
     // image.setAttribute('src', productObj.images[1] || productObj.images[0])
     prodCard.setAttribute('class', 'product-card');
 
-    prodCard.append(image)
+    imageContainer.append(image)
+    prodCard.append(imageContainer)
     prodCard.append(title)
     prodCard.append(desc)
     // prodCard.append(price)
