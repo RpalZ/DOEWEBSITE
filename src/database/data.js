@@ -1,37 +1,3 @@
-// (async () => {
-//     const { MongoClient } = require('mongodb')
-
-//     const uri = 'mongodb+srv://rayaprayuda123:Assasinkiller603@cluster0.in767t4.mongodb.net/?retryWrites=true&w=majority'
-
-//     const client = new MongoClient(uri)
-
-//     await client.connect()
-
-//     const dbName = "DoeWebsite"
-//     const collectionName = "Accounts"
-
-//     const db = client.db(dbName)
-//     const collection = db.collection(collectionName)
-
-//     const testObj = {
-//         name: "John",
-//         password: "iloveJohn"
-//     }
-
-//     try {
-
-//         const doc = await collection.findOne({
-//             name: "John"
-//         })
-//         const update = await collection.findOneAndUpdate({
-//             name: 'John'
-//         }, { $set: { password: "lol" } })
-//         console.log('success!')
-
-//     } catch (e) {
-//         console.log(e)
-//     }
-// })
 
 
 
