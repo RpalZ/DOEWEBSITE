@@ -1,4 +1,4 @@
 {
-    "mongoKey": "mongodb+srv://rayaprayuda123:Assasinkiller603@cluster0.in767t4.mongodb.net/?retryWrites=true&w=majority",
-    "mongoKeyBackUp": "mongodb://rayaprayuda123:Assasinkiller603@ac-gdudzmu-shard-00-00.in767t4.mongodb.net:27017,ac-gdudzmu-shard-00-01.in767t4.mongodb.net:27017,ac-gdudzmu-shard-00-02.in767t4.mongodb.net:27017/?ssl=true&replicaSet=atlas-2704uz-shard-0&authSource=admin&retryWrites=true&w=majority"
+    "mongoKey": "mongodb+srv://rayaprayuda123:cooldatabase1@cluster0.in767t4.mongodb.net/?retryWrites=true&w=majority",
+    "mongoKeyBackUp": "mongodb://rayaprayuda123:cooldatabase1@ac-gdudzmu-shard-00-00.in767t4.mongodb.net:27017,ac-gdudzmu-shard-00-01.in767t4.mongodb.net:27017,ac-gdudzmu-shard-00-02.in767t4.mongodb.net:27017/?ssl=true&replicaSet=atlas-2704uz-shard-0&authSource=admin&retryWrites=true&w=majority"
 }
