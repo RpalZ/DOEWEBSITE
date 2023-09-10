@@ -261,7 +261,7 @@ body::-webkit-scrollbar {
     margin-block: 100px;
     /* outline: red 2px solid; */
     border-radius: 20px;
-    width: 80%;
+    width: clamp(200px, 80%, 350px);
     padding: 10px;
     color: white;
     background: silver;
@@ -286,10 +286,13 @@ body::-webkit-scrollbar {
 }
 
 .prod-info {
-    padding: 20px;
+    padding: 25px;
     /* background: white; */
+    height: 100%;
     display: flex;
+    justify-content: space-between;
     /* border: 20px; */
+    /* align-items: center; */
     flex-direction: column;
     color: black;
 
@@ -314,7 +317,30 @@ body::-webkit-scrollbar {
     width: 100%;
     opacity: .665;
     font-size: 1rem;
+    /* margin-bottom: auto; */
     /* margin-block:30px; */
+}
+
+.exit-btn {
+    /* background-color: red; */
+    /* width: 50px; */
+    margin: 0;
+    margin-left: auto;
+    /* height: 50px; */
+    font-size: 1.2rem;
+    padding: 5px;
+    background: none;
+    text-decoration: none;
+    border: none;
+    display:flow-root;
+    /* border-radius: 50%; */
+    /* position: absolute; */
+    z-index: 8;
+
+}
+
+.exit-btn:hover {
+    color: white;
 }
 
 .buy-btn {
@@ -325,10 +351,14 @@ body::-webkit-scrollbar {
     background: black;
     border-radius: 20px;
     width: 100%;
-    margin-top: 20px;
+    
     padding: 10px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
     font-size: 1.9rem;
+}
+
+.rating {
+    font-size: 1.2rem;
 }
 
 .buy-btn > i {
@@ -347,4 +377,21 @@ body::-webkit-scrollbar {
 .buy-btn:hover > i {
    display: block;
     
+}
+
+/* media queries */
+
+@media (width > 1200px) {
+    .product {
+        width: 80%;
+         display: grid;
+         grid-template-columns: 1fr 2fr;
+    }
+    .exit-btn {
+        margin-bottom: -50px;
+        margin-right: 10px;
+        margin-left: auto;
+        padding: 15px;
+        grid-column: 2;
+    }
 }

@@ -269,7 +269,7 @@ function createProductCards(productObj, id) {
     const title = document.createElement('h1')
     const desc = document.createElement('p')
     const price = document.createElement('h2')
-    const buyBtn = document.createElement('button')
+    const buyBtn = document.createElement('a')
     const cart = document.createElement('i')
 
     cart.setAttribute('class', 'fa-solid fa-plus')
@@ -277,7 +277,7 @@ function createProductCards(productObj, id) {
     desc.innerText = productObj.description.length > 60 ? productObj.description.trim().slice(0, 60) + '...' : productObj.description.trim()
     // price.innerText = 
     buyBtn.innerText = "$" + productObj.price;
-    buyBtn.setAttribute('onclick', `window.location.href = "/shop/item/${productObj.id}"`)
+    buyBtn.setAttribute('href', `/shop/item/${productObj.id}`)
 
     // buyBtn.append(cart)
 

@@ -33,11 +33,13 @@ async function setUpProd() {
         const h1 = prodInfo.children[0]
         const span = prodInfo.children[1]
         const p = prodInfo.children[2]
+        const rating = clone.querySelector('.rating')
         const button = clone.querySelector('.buy-btn')
         const btnSpan = button.children[0]
 
         btnSpan.innerText = "$" + data.price
         img.src = data.images[0]
+        rating.innerText = `⭐ ${data.rating}`
         h1.innerText = data.title
         span.innerText = data.brand
         p.innerText = data.description
