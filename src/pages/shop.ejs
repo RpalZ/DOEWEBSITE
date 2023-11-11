@@ -18,12 +18,13 @@
             <div class="logo"><img src="/Images/1200px-TK_sandbox_icon.svg.png" alt=""><h1>Sandbox</h1></div>
             <div class="user">
                 <div class="user-card" onclick="userCardClicked(this)">
-                    Guest
+                    <%= locals.user || 'Guest'  %>
+                    
                 </div>
                 <ul class="user-list">
-                    <li class="user-util"><a href="#">Dashboard</a></li>
-                    <li class="user-util"><a href="#">Cart</a></li>
-                    <li class="user-util"><a href="#">Login</a></li>
+                    <li class="user-util"><a href="/shop/dashboard">Dashboard</a></li>
+                    <li class="user-util"><a href="/shop/cart">Cart</a></li>
+                    <li class="user-util <%= locals.login && 'logged' %>"><a href="/home/login">Login</a></li>
                     <!-- <li class="user-util"></li> -->
                 </ul>
             </div>

@@ -577,6 +577,10 @@ ul li.active {
     display: block;
 }
 
+.user-util.logged {
+    display: none;
+}
+
 .user-util > a {
     text-decoration: none;
     color: white;

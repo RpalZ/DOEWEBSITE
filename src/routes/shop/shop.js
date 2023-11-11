@@ -6,8 +6,35 @@ const { initCookieObj } = require('../../utils/functions')
 const initMongoDB = require('../../database/data')
 
 router.route('/')
-    .get((req, res) => {
-        res.render(`${__dirname}/../../pages/shop.ejs`)
+    .get(async (req, res) => {
+
+
+        try {
+
+            // const mainCollection = new initMongoDB('main')
+            const shopCollection = new initMongoDB('shop')
+            if (req.session.user) {
+                //if there is req.session, check if there is database acc if not then create one 
+                const shopResQuery = await shopCollection.collection.findOne({
+                    user: req.session.user.user
+                })
+
+                if (!shopResQuery) {
+                    //create a new shop account
+                    const { obj, collection } = shopCollection
+                    obj.user = req.session.user.user
+                    collection.insertOne(obj)
+
+                }
+
+                res.render(`${__dirname}/../../pages/shop.ejs`, { login: true, user: req.session.user.user })
+            } else {
+                res.render(`${__dirname}/../../pages/shop.ejs`)
+            }
+        } catch (e) {
+            console.log(e)
+        }
+
     })
 
 
